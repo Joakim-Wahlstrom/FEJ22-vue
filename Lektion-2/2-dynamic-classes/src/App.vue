@@ -3,6 +3,7 @@
   <div class="container">
     <ExampleOne class="mt-1" />
     <ExampleTwo class="mt-1" />
+    <ExampleTree class="mt-1" />
   </div>
 </template>
 
@@ -10,11 +11,13 @@
 import PageTitle from './components/PageTitle.vue'
 import ExampleOne from './components/ExampleOne.vue'
 import ExampleTwo from './components/ExampleTwo.vue'
+import ExampleTree from './components/ExampleTree.vue'
 export default {
   components: { 
     PageTitle, 
     ExampleOne, 
     ExampleTwo, 
+    ExampleTree,
     },
 
 }

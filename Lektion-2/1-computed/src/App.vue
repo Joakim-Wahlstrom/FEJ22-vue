@@ -7,6 +7,8 @@
 
     <TextInput class="mt-5" />
 
+    <Computed class="mt-5" />
+
   </div>
 
   <Footer msg="message" />
@@ -19,8 +21,9 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Functions from './components/Functions.vue'
 import TextInput from './components/TextInput.vue'
+import Computed from './components/Computed.vue'
 export default {
-  components: { Navbar, Footer, Functions, TextInput },
+  components: { Navbar, Footer, Functions, TextInput, Computed },
   data() {
     return {
       message: 'Ett meddelande från data'

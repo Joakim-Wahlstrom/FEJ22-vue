@@ -87,7 +87,14 @@ export default {
         return
       }
 
-      this.todos = this.todos.filter(todo => todo.id !== _todo._id)
+      axios.delete(this.apiURL + _todo._id)
+        .then(res => {
+          if(res.status === 200) {
+            this.todos = this.todos.filter(todo => todo._id !== res.data.id)
+          }
+        })
+        .catch(err => console.log(err))
+
     }
   },
   created() {

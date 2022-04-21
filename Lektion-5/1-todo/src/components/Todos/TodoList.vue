@@ -1,5 +1,5 @@
 <template>
-  <div class="py-3">
+  <div class="py-3" v-if="todos.length">
     <TransitionGroup name="fade-slide">
       <div v-for="todo in todos" :key="todo._id">
         <TodoListItem v-if="value === ''" :todo="todo" @toggle-complete="$emit('toggle-complete', todo)" @delete-todo="$emit('delete-todo', todo)" />
@@ -8,6 +8,9 @@
 
       <!-- <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo" @toggle-complete="$emit('toggle-complete', todo)" @delete-todo="$emit('delete-todo', todo)" /> -->
     </TransitionGroup>
+  </div>
+  <div v-else>
+    <p class="h2 py-3 text-center">No todos left</p>
   </div>
 </template>
 

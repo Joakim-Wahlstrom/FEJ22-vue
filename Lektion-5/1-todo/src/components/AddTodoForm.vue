@@ -39,8 +39,9 @@ export default {
       }
 
       this.error = ''
-
-
+      this.$emit('add-todo', this.title)
+      this.title = ''
+      this.$refs.titleInput.focus()
 
     }
   }

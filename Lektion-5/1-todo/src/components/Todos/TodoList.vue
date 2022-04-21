@@ -1,7 +1,12 @@
 <template>
   <div class="py-3">
     <TransitionGroup name="fade-slide">
-      <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo" @toggle-complete="$emit('toggle-complete', todo)" @delete-todo="$emit('delete-todo', todo)" />
+      <div v-for="todo in todos" :key="todo._id">
+        <TodoListItem v-if="value === ''" :todo="todo" @toggle-complete="$emit('toggle-complete', todo)" @delete-todo="$emit('delete-todo', todo)" />
+        <TodoListItem v-else-if="todo.completed === value" :todo="todo" @toggle-complete="$emit('toggle-complete', todo)" @delete-todo="$emit('delete-todo', todo)" />
+      </div>
+
+      <!-- <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo" @toggle-complete="$emit('toggle-complete', todo)" @delete-todo="$emit('delete-todo', todo)" /> -->
     </TransitionGroup>
   </div>
 </template>
@@ -9,7 +14,7 @@
 <script>
 import TodoListItem from './TodoListItem.vue'
 export default {
-  props: ['todos'],
+  props: ['todos', 'value'],
   components: { TodoListItem },
 }
 </script>
@@ -30,5 +35,5 @@ export default {
     opacity: 0;
     transform: translateX(100px);
   }
-  
+
 </style>

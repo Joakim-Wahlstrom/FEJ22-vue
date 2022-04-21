@@ -7,7 +7,19 @@
 
 <script>
 export default {
-  props: ['todo']
+  props: ['todo'],
+  // created() {
+  //   console.log('created', this.todo.title)
+  // },
+  // mounted() {
+  //   console.log('mounted', this.todo.title)
+  // },
+  // updated() {
+  //   console.log('updated', this.todo.title)
+  // },
+  // unmounted() {
+  //   console.log('unmounted', this.todo.title)
+  // }
 }
 </script>
 

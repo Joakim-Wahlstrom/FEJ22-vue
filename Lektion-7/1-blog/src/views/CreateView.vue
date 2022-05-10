@@ -16,7 +16,7 @@
       </div>
 
       <div class="form-group">
-        <label for="content" class="form-label">image URL: </label>
+        <label for="content" class="form-label">Content: </label>
         <textarea id="content" class="form-control"></textarea>
         <p class="error">Please enter some content</p>
       </div>

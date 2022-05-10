@@ -21,6 +21,48 @@
         "Computers"
       ],
       "imgURL": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+    },
+    {
+      "title": "test",
+      "body": "asdfas das dsa das d asd as dasd as d",
+      "imgURL": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
+      "categories": [
+        "test"
+      ],
+      "author": "Tommy",
+      "id": "NFAwik6"
+    },
+    {
+      "title": "asdasd",
+      "body": "asd ddas dsa das sa das dsa ",
+      "imgURL": "https://images.unsplash.com/photo-1652113950084-44d663d8c057?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1354&q=80",
+      "categories": [
+        "test"
+      ],
+      "author": "Tommy",
+      "id": "4zHemTl"
+    },
+    {
+      "title": "hej",
+      "body": "asd as das dasd ",
+      "imgURL": "https://images.unsplash.com/photo-1652113950084-44d663d8c057?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1354&q=80",
+      "categories": [
+        "test"
+      ],
+      "author": "Joakim",
+      "id": "fAQVqPd"
+    },
+    {
+      "title": "ett inlägg om mat",
+      "body": "Mat är gott",
+      "imgURL": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+      "categories": [
+        "food",
+        "kött",
+        "mat"
+      ],
+      "author": "Joakim",
+      "id": "5mCPJpn"
     }
   ]
 }

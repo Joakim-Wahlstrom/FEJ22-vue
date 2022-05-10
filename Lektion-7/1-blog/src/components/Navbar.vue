@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar container">
     <h1 class="brand">Joakims Blog</h1>
-    <form>
-      <input type="search" class="form-control" placeholder="Search">
+    <form @submit.prevent="handleSubmit">
+      <input type="search" class="form-control" placeholder="Search" v-model="searchQuery">
       <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
     <ul class="nav-links">
@@ -14,7 +14,17 @@
 
 <script>
 export default {
-  name: 'PrimaryNavigation'
+  name: 'PrimaryNavigation',
+  data() {
+    return {
+      searchQuery: ''
+    }
+  },
+  methods: {
+    handleSubmit() {
+      this.$router.push({ name: 'home', query: { searchQuery: this.searchQuery } })
+    }
+  }
 }
 </script>
 

@@ -40,6 +40,10 @@ export default {
     background-color: #d3a718;
     color: #000000;
   }
+  .btn-success {
+    background-color: green;
+    color: #fff;
+  }
   .btn-large {
     font-size: .9rem;
   }

@@ -2,7 +2,7 @@
   <button @click="addToPrice" class="btn">ADD</button>
   <button @click="sub" class="btn">SUB</button>
   <div class="list">
-    <ProductCard v-for="product in prodTax" :key="product.id" :product="product" class="card" />
+    <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" class="card" />
   </div>
 </template>
 
@@ -18,6 +18,9 @@ export default {
     },
     prodTax() {
       return this.$store.getters.taxedProducts
+    },
+    filteredProducts() {
+      return this.$store.getters.filteredProducts
     }
   },
   methods: {

@@ -1,9 +1,9 @@
 <template>
-  <div class="card">
+  <router-link :to="'/products/details/' + product.id" class="card">
     <p>ID: {{ product.id }}</p>
     <p>NAME: {{ product.name }}</p>
     <p>PRICE: {{ product.price }}</p>
-  </div>
+  </router-link>
 </template>
 
 <script>

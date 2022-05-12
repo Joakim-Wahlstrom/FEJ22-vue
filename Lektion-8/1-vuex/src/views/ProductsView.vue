@@ -6,17 +6,18 @@
         <button @click="changeComponent('List')"><i class="fa-solid fa-list"></i></button>
       </div>
       <form>
-        <input type="search" placeholder="Search">
+        <input type="search" placeholder="Search" v-model="searchVal" @keyup="search(searchVal)">
       </form>
     </aside>
      
     <main>
-      <component :is="comp" />
+      <component :is="component" />
     </main>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
   import Grid from '../components/products/GridView.vue'
   import List from '../components/products/ListView.vue'
 
@@ -24,13 +25,14 @@ export default {
   components: { Grid, List },
   data() {
     return {
-      comp: 'List'
+      searchVal: ''
     }
   },
+  computed: {
+    ...mapGetters(['component'])
+  },
   methods: {
-    changeComponent(val) {
-      this.comp = val
-    }
+    ...mapActions(['changeComponent', 'search'])
   }
 }
 </script>

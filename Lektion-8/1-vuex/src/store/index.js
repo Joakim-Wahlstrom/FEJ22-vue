@@ -18,7 +18,10 @@ export default createStore({
       { id: 13, name: 'Product 13', price: 700 },
       { id: 14, name: 'Product 14', price: 800 },
       { id: 15, name: 'Product 15', price: 900 }
-    ]
+    ],
+    product: null,
+    component: 'List',
+    searchVal: ''
   },
   getters: {
     taxedProducts: state => {
@@ -30,7 +33,12 @@ export default createStore({
         }
       })
     },
-    products: state => state.products
+    products: state => state.products,
+    product: state => state.product,
+    component: state => state.component,
+    filteredProducts: (state, getters) => {
+      return getters.taxedProducts.filter(product => product.name.toLowerCase().match(state.searchVal.toLowerCase()))
+    }
   },
   mutations: {
     ADD: (state, amount) => {
@@ -42,6 +50,16 @@ export default createStore({
       state.products.forEach(product => {
         product.price -= amount
       })
+    },
+    SET_PRODUCT: (state, id) => {
+      let _product = state.products.find(product => product.id === +id)
+      state.product = _product
+    },
+    CHANGE_COMPONENT: (state, comp) => {
+      state.component = comp
+    },
+    SEARCH: (state, val) => {
+      state.searchVal = val
     }
   },
   actions: {
@@ -53,6 +71,15 @@ export default createStore({
     },
     addToPrice: ({ commit }, amount) => {
       commit('ADD', amount)
+    },
+    getProduct: ({commit}, id) => {
+      commit('SET_PRODUCT', id)
+    },
+    changeComponent: ({commit}, comp) => {
+      commit('CHANGE_COMPONENT', comp)
+    },
+    search: ({ commit }, val) => {
+      commit('SEARCH', val)
     }
   },
   // modules: {

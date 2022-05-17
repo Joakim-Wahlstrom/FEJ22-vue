@@ -25,6 +25,12 @@ export default {
     },
     TOGGLE_ACTIVE_STATE: (state, payload) => {
       payload.user.active = payload.res.active
+    },
+    ADD_USER: (state, payload) => {
+      state.list.push(payload)
+    },
+    REMOVE_USER: (state, payload) => {
+      state.list = state.list.filter(user => user.id !== payload)
     }
   },
   actions: {
@@ -37,10 +43,24 @@ export default {
         commit('SET_ERROR', err.message)
       }
     },
+    addUser: async ({commit}, userName) => {
+      const user = {
+        name: userName,
+        active: true
+      }
+      const res = await axios.post('http://localhost:3000/users/', user)
+      if(res.status == 201)
+        commit('ADD_USER', res.data)
+    },
     toggleActive: async ({commit}, user) => {
       const res = await axios.patch('http://localhost:3000/users/' + user.id, { active: !user.active})
       if(res.status === 200)
       commit('TOGGLE_ACTIVE_STATE', {user, res: res.data})
+    },
+    removeUser: async ({commit}, id) => {
+      const res = await axios.delete('http://localhost:3000/users/' + id)
+      if(res.status === 200)
+        commit('REMOVE_USER', id)
     }
   }
 }

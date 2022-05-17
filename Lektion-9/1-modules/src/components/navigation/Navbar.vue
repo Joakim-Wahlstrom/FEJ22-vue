@@ -15,11 +15,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li v-if="loggedIn" class="nav-item">
             <router-link class="nav-link" active-class="active" aria-current="page" to="/users">Users</router-link>
           </li>
-          <li class="nav-item">
+          <li v-if="!loggedIn" class="nav-item">
             <router-link class="nav-link" active-class="active" aria-current="page" to="/">Login</router-link>
+          </li>
+          <li v-else class="nav-item">
+            <router-link @click="logout" class="btn btn-light" aria-current="page" to="/">Logout</router-link>
           </li>
         </ul>
       </div>
@@ -28,8 +31,15 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  name: 'PrimaryNavigation'
+  name: 'PrimaryNavigation',
+  computed: {
+    ...mapGetters(['loggedIn'])
+  },
+  methods: {
+    ...mapActions(['logout'])
+  }
 }
 </script>
 

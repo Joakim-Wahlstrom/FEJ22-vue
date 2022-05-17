@@ -6,14 +6,9 @@
       "active": true
     },
     {
-      "id": "2",
-      "name": "User 2",
-      "active": false
-    },
-    {
-      "id": "3",
-      "name": "User 3",
-      "active": true
+      "name": "Joakim",
+      "active": false,
+      "id": "j8MHFAD"
     }
   ]
 }

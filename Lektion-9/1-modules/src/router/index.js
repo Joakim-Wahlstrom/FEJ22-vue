@@ -1,6 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import UsersView from '../views/UsersView.vue'
+import store from '../store/index'
+
+const requireAuth = (to, from, next) => {
+  let loggedIn = store.getters.loggedIn
+
+  if(!loggedIn) next({ name: 'login' })
+  else next()
+}
 
 const routes = [
   {
@@ -11,7 +19,8 @@ const routes = [
   {
     path: '/users',
     name: 'users',
-    component: UsersView
+    component: UsersView,
+    beforeEnter: requireAuth
   },
 ]
 

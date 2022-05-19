@@ -1,8 +1,8 @@
 <template>
-  <div class="card evt d-flex justify-between">
+  <router-link :to="`/event/${evt.id}`" class="card evt d-flex justify-between">
     <p class="evt-title">{{ evt.title }}</p>
     <p>{{timeFromNow}}</p>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -29,6 +29,8 @@ export default {
     border-radius: .5rem;
     margin-bottom: .5rem;
     box-shadow: 3px 3px 5px #33333338;
+    color: #333;
+    text-decoration: none;
   }
   .evt:hover {
     background-color: #f1f1f1;

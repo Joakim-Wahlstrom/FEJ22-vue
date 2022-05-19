@@ -29,9 +29,11 @@
 import axios from 'axios'
 import { ref } from '@vue/reactivity'
 import { useEventsStore } from '@/stores/events'
+import { useAuthStore } from '@/stores/auth'
 export default {
   setup(props, { emit }) {
     const evtStore = useEventsStore()
+    const authStore = useAuthStore()
 
     const formData = ref({
       title: '',
@@ -45,7 +47,7 @@ export default {
       const newEvent = {
         ...formData.value,
         timestamp: msek,
-        userId: 1
+        userId: authStore.id
       }
 
       const res = await axios.post('http://localhost:3000/events', newEvent)

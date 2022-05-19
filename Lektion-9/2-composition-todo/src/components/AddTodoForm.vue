@@ -8,10 +8,15 @@
 <script>
 import { ref } from 'vue'
 export default {
-  setup() {
+  setup(props, context) {
     const title = ref('')
 
-    return { title }
+    const handleSubmit = () => {
+      context.emit('add-todo', title.value)
+      title.value = ''
+    }
+
+    return { title, handleSubmit }
   }
 }
 </script>

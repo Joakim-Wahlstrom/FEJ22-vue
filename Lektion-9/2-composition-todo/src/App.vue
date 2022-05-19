@@ -1,15 +1,18 @@
 <template>
   <div class="container">
-    <AddTodoForm />
+    <AddTodoForm @add-todo="addTodo" />
+    <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" @remove-todo="removeTodo" @toggle-complete="toggleComplete" />
   </div>
 </template>
 
 <script>
 import { ref } from 'vue'
 import AddTodoForm from './components/AddTodoForm.vue'
+import TodoItem from './components/TodoItem.vue'
 export default {
   components: {
-    AddTodoForm
+    AddTodoForm,
+    TodoItem
   },
   setup() {
     const todos = ref([
@@ -18,7 +21,19 @@ export default {
       { id: 3, title: 'Todo 3', completed: false }
     ])
 
-    return { todos }
+    const addTodo = (title) => {
+      todos.value.push({ id: Date.now().toString(), title, completed: false })
+    }
+
+    const removeTodo = (id) => {
+      todos.value = todos.value.filter(todo => todo.id !== id)
+    }
+
+    const toggleComplete = (todo) => {
+      todo.completed = !todo.completed
+    }
+
+    return { todos, removeTodo, addTodo, toggleComplete }
   }
 }
 </script>

@@ -1,0 +1,12 @@
+{
+  "users": [],
+  "events": [
+    {
+      "id": 1,
+      "title": "Födeledagskalas",
+      "body": "Vi ska åka till italien och äta tårta och dricka vin",
+      "timestamp": 1652945413183,
+      "userId": 1
+    }
+  ]
+}

@@ -7,6 +7,34 @@
       "body": "Vi ska åka till italien och äta tårta och dricka vin",
       "timestamp": 1652945413183,
       "userId": 1
+    },
+    {
+      "title": "Test",
+      "body": "Det här är ett test event",
+      "timestamp": 1652957160000,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "asfsdgf",
+      "body": "asdf",
+      "timestamp": 1652946480000,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "Äta lunch",
+      "body": "maaat\n",
+      "timestamp": 1652954280000,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "sova",
+      "body": "asfd",
+      "timestamp": 1652997540000,
+      "userId": 1,
+      "id": 5
     }
   ]
 }

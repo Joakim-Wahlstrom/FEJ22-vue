@@ -4,7 +4,7 @@
       <router-link to="/" class="title">My events</router-link>
 
       <div class="d-flex justify-between">
-        <button class="btn btn-clear">Add New Event</button>
+        <button class="btn btn-clear" @click="$emit('show-modal')">Add New Event</button>
         <div @click="showDropdown = true" class="avatar-container ml-1">
           <img src="Jag.png" alt="avatar" class="avatar">
         </div>

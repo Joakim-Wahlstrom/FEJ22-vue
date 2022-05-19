@@ -1,16 +1,21 @@
 <template>
-<Navbar />
+  <Navbar @show-modal="showModal = true" />
   <div class="container">
     <router-view />
   </div>
+  <AddEventModal v-if="showModal" @close-modal="showModal = false" />
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
+import AddEventModal from './components/AddEventModal.vue'
 import Navbar from './components/Navbar.vue'
 export default {
-  components: { Navbar },
+  components: { Navbar, AddEventModal },
   setup() {
+    const showModal = ref(false)
 
+    return { showModal }
   }
 }
 </script>
@@ -39,6 +44,9 @@ export default {
   }
   .m-auto {
     margin: auto;
+  }
+  .ml-auto {
+    margin-left: auto;
   }
   .mt-1 {
     margin-top: 1rem;

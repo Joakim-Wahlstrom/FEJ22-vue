@@ -4,8 +4,8 @@
       <div class="avatar-container m-auto">
         <img src="Jag.png" class="avatar" alt="avatar">
       </div>
-      <p class="name mt-1">Joakim Wahlström</p>
-      <p class="mail">joakim@mail.com</p>
+      <p class="name mt-1">{{ name }}</p>
+      <p class="mail">{{ email }}</p>
       <router-link to="/pastevents" class="link mt-1" >View past events</router-link>
       <div class="dropdown-divider"></div>
       <button class="btn btn-outline" @click="logout">Logout</button>
@@ -14,14 +14,23 @@
 </template>
 
 <script>
+import { useAuthStore } from '@/stores/auth'
+import { storeToRefs } from 'pinia'
+import { useRouter } from 'vue-router'
 export default {
   setup(props, { emit }) {
+    const router = useRouter()
+    const authStore = useAuthStore()
+    const { name, email } = storeToRefs(authStore)
 
     const logout = () => {
+      authStore.$reset()
+      localStorage.removeItem('token')
       emit('close-dropdown')
+      router.replace({ name: 'welcome' })
     }
 
-    return { logout }
+    return { logout, name, email }
   }
 }
 </script>
@@ -67,5 +76,6 @@ export default {
     color: #000000;
     font-weight: bold;
     display: inline-block;
+    cursor: pointer;
   }
 </style>

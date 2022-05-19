@@ -1,5 +1,12 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "joakim@mail.com",
+      "password": "$2a$10$Ea.WGRX5L6PbohW3xH.vIu49N2IkxbWzVuoaNt3.ozFXcBqfyIDB.",
+      "name": "Joakim Wahlström",
+      "id": 1
+    }
+  ],
   "events": [
     {
       "id": 1,

@@ -54,6 +54,9 @@ export default {
   .ml-1 {
     margin-left: 1rem;
   }
+  .mb-3 {
+    margin-bottom: 3rem;
+  }
   .btn {
     padding: .4em 1em;
     border-radius: 100vh;
